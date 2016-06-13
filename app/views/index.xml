@@ -1,0 +1,6 @@
+<Alloy>
+	<Window id="container" top="50" layout="vertical">
+		<Label>Hi I'm a Label'</Label>
+		<Button id="btn">print</Button>
+	</Window>
+</Alloy>
