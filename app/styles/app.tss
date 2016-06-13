@@ -12,15 +12,15 @@ and text fields (depending on platform) in your app unless you
 overrode the settings with other TSS, XML, or JS settings:
 
 'Label[platform=android,windows]': {
-	color: '#000' // all platforms except Android and Windows default to black
+color: '#000' // all platforms except Android and Windows default to black
 }
 
 'Window': {
-	backgroundColor: '#fff' // white background instead of default transparent or black
+backgroundColor: '#fff' // white background instead of default transparent or black
 }
 
 'TextField[platform=android]': {
-	height: Ti.UI.SIZE
+height: Ti.UI.SIZE
 }
 
 */
@@ -29,6 +29,7 @@ overrode the settings with other TSS, XML, or JS settings:
     width: 200,
     height: 35,
     borderColor: "#c5c5c7",
-    paddingLeft: 10
+    paddingLeft: 10,
+    top: 10
 }
 
