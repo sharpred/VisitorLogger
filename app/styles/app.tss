@@ -24,3 +24,10 @@ overrode the settings with other TSS, XML, or JS settings:
 }
 
 */
+".formField": {
+    color: 'black',
+    width: 200,
+    height: 50,
+    borderColor: "#c5c5c7",
+    paddingLeft: 10
+}
