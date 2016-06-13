@@ -1,5 +1,6 @@
-function share(args){
-	require(WPATH('com.alcoapps.socialshare')).share(args);
+function share(args) {
+    "use strict";
+    require(WPATH('com.alcoapps.socialshare')).share(args);
 }
 
 exports.share = share;

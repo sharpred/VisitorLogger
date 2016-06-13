@@ -51,6 +51,8 @@
     <modules>
         <module platform="commonjs">ti.cloud</module>
         <module platform="iphone">dk.napp.social</module>
+        <module platform="iphone" version="5.1">ti.paint</module>
+        <module platform="android">ti.paint</module>
     </modules>
     <deployment-targets>
         <target device="android">true</target>
