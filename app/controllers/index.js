@@ -26,6 +26,14 @@ function report(e) {
 
 }
 
+function shareData() {
+    helpers.shareViewImage($.container, "Print Me");
+}
+
+function saveData() {
+    console.log("**** save data");
+}
+
 function savePhoto(e) {
     console.log("*** savePhoto");
     if (e.media) {
@@ -132,7 +140,4 @@ $.bb2.addEventListener("click", function(e) {
     }
 });
 
-$.btn.addEventListener("click", function() {
-    helpers.shareViewImage($.container, "Print Me");
-});
 $.container.open();

@@ -14,7 +14,8 @@
                 <Button top="10" class="button" id="photoButton" onClick="onAdd">Photo</Button>
                 <ImageView top="0" height="0" id="signatureImage" onClick="addSignature" image="/images/myimage.png" />
                 <Button class="button" id="signatureButton" onClick="addSignature">Signature</Button>
-                <Button class="button" id="btn">Save</Button>
+                <Button class="button" id="btn" onClick="shareData">Print</Button>
+                <Button class="button" id="saveBtn" onClick="saveData">Save</Button>
             </View>
             <View visible="false" layout="vertical" id="pickerView" height="276" bottom="-276" width="320" zIndex="99" backgroundColor="white" class="pickerView">
                 <ButtonBar id="bb1" platform="ios" backgroundColor="#369" top="5" height="25" width="200">

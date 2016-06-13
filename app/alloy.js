@@ -15,3 +15,4 @@
 // ACS for your application and then fire an event (see below)
 // when connected or errored. if you do not use ACS in your
 // application as a client, you should remove this block
+Alloy.Collections.visitors = Alloy.createCollection("visitors");
