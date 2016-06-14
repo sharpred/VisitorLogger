@@ -40,6 +40,11 @@ $.getValue = function() {
     return $.txt.value;
 };
 
+$.reset = function() {
+    $.txt.value="";
+    $.txt.borderColor="#c5c5c7";
+};
+
 function cancel() {
     $.txt.blur();
 }
