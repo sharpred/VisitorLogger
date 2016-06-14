@@ -29,6 +29,10 @@ function report(e) {
 
 }
 
+function test() {
+
+}
+
 function shareData() {
     helpers.shareViewImage($.dataView, "Visitor Details");
 }
@@ -185,6 +189,18 @@ $.bb2.addEventListener("click", function(e) {
         //there is no default;
         break;
     }
+});
+
+$.nameField.setNextAction(function() {
+    $.orgn.focus();
+});
+
+$.orgn.setNextAction(function() {
+    $.car.focus();
+});
+
+$.car.setNextAction(function() {
+    $.visiting.focus();
 });
 
 $.container.open();

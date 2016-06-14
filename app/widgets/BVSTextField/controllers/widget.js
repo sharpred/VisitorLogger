@@ -5,12 +5,16 @@ if (args.hintText) {
 }
 
 if (args.isFirst) {
-    $.back.disabled = false;
+    $.back.enabled = false;
 }
 
-if (args.nextAction && _.isFunction(args.nextAction)) {
-    $.done.addEventListener("click", args.nextAction);
-}
+$.setNextAction = function(func){
+    $.done.addEventListener("click", func);
+};
+
+$.focus = function(){
+    $.txt.focus();
+};
 
 $.setValue = function(val) {
     $.txt.value = val;
