@@ -20,6 +20,10 @@ $.focus = function(){
     $.txt.focus();
 };
 
+$.blur = function(){
+    $.txt.blur();
+};
+
 $.setValue = function(val) {
     $.txt.value = val;
 };

@@ -137,11 +137,12 @@ function eraseMe() {
 
 $.dateField.text = "Date: " + moment().format("DD/MM/YY");
 
-$.arrivalTime.addEventListener('click', function() {
+function showArrivalPicker() {
     $.pickerView.visible = true;
     activeButton = $.arrivalTime;
     $.pickerView.animate(slide_in);
-});
+};
+$.arrivalTime.addEventListener('click', showArrivalPicker);
 
 $.departureTime.addEventListener('click', function() {
     $.pickerView.visible = true;
@@ -201,6 +202,26 @@ $.orgn.setNextAction(function() {
 
 $.car.setNextAction(function() {
     $.visiting.focus();
+});
+
+$.visiting.setNextAction(function() {
+    $.visiting.blur();
+    _.defer(function() {
+        showArrivalPicker();
+    });
+});
+
+
+$.orgn.setBackAction(function() {
+    $.nameField.focus();
+});
+
+$.car.setBackAction(function() {
+    $.orgn.focus();
+});
+
+$.visiting.setBackAction(function() {
+    $.car.focus();
 });
 
 $.container.open();
