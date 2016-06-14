@@ -4,7 +4,7 @@
             <TabGroup src="mysrcrfile"></TabGroup>
             <Label bottom="10" id="title">Visitors Book</Label>
             <Label bottom="10" id="dateField"/>
-            <Widget src="BVSTextField" id="nameField" hintText="Name"/>
+            <Widget src="BVSTextField" isFirst="true" id="nameField" hintText="Name"/>
             <Widget src="BVSTextField" id="orgn" hintText="Organisation"/>
             <Widget src="BVSTextField" id="car" hintText="Car Registration"/>
             <Widget src="BVSTextField" id="visiting" hintText="Visiting"/>

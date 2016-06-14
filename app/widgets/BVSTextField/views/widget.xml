@@ -1,16 +1,5 @@
 <Alloy>
-	<TextField id="txt" class="formField">
-	    <!-- Sets the keyboardToolbar property -->
-            <KeyboardToolbar>
-                <Toolbar>
-                    <Items>
-                        <Button id="cancel" onClick="cancel" systemButton="Ti.UI.iPhone.SystemButton.CANCEL" />
-                        <FlexSpace/>
-                        <Button id="back" onClick="cancel" style="Ti.UI.iPhone.SystemButtonStyle.DONE">Back</Button>
-                        <FlexSpace/>
-                        <Button id="done" onClick="cancel" style="Ti.UI.iPhone.SystemButtonStyle.DONE">Next</Button>
-                    </Items>
-                </Toolbar>
-            </KeyboardToolbar>
-	</TextField>
+    <TextField id="txt" class="formField">
+        <!-- Sets the keyboardToolbar property -->
+    </TextField>
 </Alloy>
