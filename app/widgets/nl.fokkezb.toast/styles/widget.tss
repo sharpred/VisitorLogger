@@ -1,6 +1,6 @@
 ".nlFokkezbToast_window": {
   width: Ti.UI.SIZE,
-  height: '60dp',
+  height: 100,
 
   bottom: 0,
 
@@ -9,27 +9,24 @@
 }
 
 ".nlFokkezbToast_view": {
-  width: Ti.UI.SIZE,
-  height: '30dp',
-  bottom: '-30dp',
+  width: 200,
+  height: '50dp',
+  bottom: '-50dp',
 
-  backgroundColor: '#000',
+  backgroundColor: '#c5c5c7',
   borderRadius: '5dp'
 }
 
 ".nlFokkezbToast_enterAnimation": {
-  bottom: '30dp'
+  bottom: '50dp'
 }
 
 ".nlFokkezbToast_exitAnimation": {
-  bottom: '-30dp'
+  bottom: '-50dp'
 }
 
 ".nlFokkezbToast_label": {
-  left: '10dp',
-  width: Ti.UI.SIZE,
-  right: '10dp',
-
+  width: 200,
   textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
   color: '#fff',
   font: {

@@ -1,4 +1,4 @@
 <Alloy>
-    <Window id="list">
+    <Window id="list" backgroundColor="white">
     </Window>
 </Alloy>

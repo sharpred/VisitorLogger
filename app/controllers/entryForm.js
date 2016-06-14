@@ -168,7 +168,7 @@ slide_in = Titanium.UI.createAnimation({
 });
 
 slide_out = Titanium.UI.createAnimation({
-    bottom : -276
+    bottom : Alloy.Globals.pickerBottom
 });
 
 $.bb1.addEventListener("click", function() {
