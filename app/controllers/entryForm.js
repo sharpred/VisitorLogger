@@ -175,6 +175,7 @@ $.bb1.addEventListener("click", function() {
     $.pickerView.animate(slide_out);
     $.pickerView.visible = false;
     activeButton = null;
+    Alloy.Globals.Dispatcher.trigger("BVSTextField:update");
 });
 
 $.bb2.addEventListener("click", function(e) {
@@ -234,4 +235,18 @@ $.car.setBackAction(function() {
 
 $.visiting.setBackAction(function() {
     $.car.focus();
+});
+
+Alloy.Globals.Dispatcher.on("BVSTextField:update", function() {
+    var nameField = $.nameField.isNotEmpty(),
+        carField = $.car.isNotEmpty(),
+        orgField = $.orgn.isNotEmpty(),
+        visitingField = $.visiting.isNotEmpty(),
+        arrivalField = ($.arrivalTime.text !== "  Time In") ? true : false;
+    if (nameField && carField && orgField && visitingField && arrivalField) {
+        $.saveButton.enabled = true;
+    } else {
+        $.saveButton.enabled = false;
+    }
+    console.log($.arrivalTime.text);
 });

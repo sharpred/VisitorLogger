@@ -57,7 +57,7 @@
                 <FlexSpace/>
                 <Button onClick="shareData" title="Print" />
                 <FlexSpace/>
-                <Button onClick="saveData" title="Save" />
+                <Button id="saveButton" enabled="false" onClick="saveData" title="Save" />
             </Items>
 
             <!-- Place additional views for the Toolbar here. -->
