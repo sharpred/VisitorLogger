@@ -8,6 +8,13 @@ if (args.isFirst) {
     $.back.enabled = false;
 }
 
+$.txt.addEventListener("blur", function() {
+    if ($.txt.value === "") {
+        $.txt.borderColor = "red";
+    } else {
+        $.txt.borderColor = "#c5c5c7";
+    }
+});
 
 $.setNextAction = function(func) {
     $.done.addEventListener("click", function() {
