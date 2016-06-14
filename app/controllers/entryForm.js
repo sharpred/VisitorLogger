@@ -48,7 +48,9 @@ function saveData() {
         model;
     console.log("**** save data");
     [$.nameField, $.orgn, $.car, $.visiting].forEach(function(field, val) {
-        data[field.id] = field.getValue();
+        var id = field.getID();
+        console.log(JSON.stringify(field));
+        data[id] = field.getValue();
         field.reset();
     });
     [$.arrivalTime, $.departureTime].forEach(function(field, val) {

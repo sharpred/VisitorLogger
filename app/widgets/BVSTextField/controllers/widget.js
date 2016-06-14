@@ -40,6 +40,10 @@ $.getValue = function() {
     return $.txt.value;
 };
 
+$.getID = function() {
+    return args.id;
+};
+
 $.reset = function() {
     $.txt.value="";
     $.txt.borderColor="#c5c5c7";
