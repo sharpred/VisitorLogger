@@ -8,19 +8,34 @@ if (args.isFirst) {
     $.back.enabled = false;
 }
 
-$.setNextAction = function(func){
-    $.done.addEventListener("click", func);
+
+$.setNextAction = function(func) {
+    $.done.addEventListener("click", function() {
+        if ($.txt.value === "") {
+            $.txt.borderColor = "red";
+        } else {
+            $.txt.borderColor = "#c5c5c7";
+        }
+        func();
+    });
 };
 
-$.setBackAction = function(func){
-    $.back.addEventListener("click", func);
+$.setBackAction = function(func) {
+    $.back.addEventListener("click", function() {
+        if ($.txt.value === "") {
+            $.txt.borderColor = "red";
+        } else {
+            $.txt.borderColor = "#c5c5c7";
+        }
+        func();
+    });
 };
 
-$.focus = function(){
+$.focus = function() {
     $.txt.focus();
 };
 
-$.blur = function(){
+$.blur = function() {
     $.txt.blur();
 };
 
