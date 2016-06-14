@@ -14,6 +14,7 @@ $.txt.addEventListener("blur", function() {
     } else {
         $.txt.borderColor = "#c5c5c7";
     }
+    Alloy.Globals.Dispatcher.trigger("BVSTextField:update");
 });
 
 $.setNextAction = function(func) {
@@ -33,11 +34,30 @@ $.blur = function() {
 };
 
 $.setValue = function(val) {
-    $.txt.value = val;
+    if (val) {
+        $.txt.value = val;
+    }
+
 };
 
 $.getValue = function() {
     return $.txt.value;
+};
+
+$.isNotEmpty = function() {
+    var test = false;
+    if ($.txt.value !== "") {
+        return true;
+    }
+};
+
+$.getID = function() {
+    return args.id;
+};
+
+$.reset = function() {
+    $.txt.value = "";
+    $.txt.borderColor = "#c5c5c7";
 };
 
 function cancel() {

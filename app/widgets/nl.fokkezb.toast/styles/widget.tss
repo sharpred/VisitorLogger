@@ -1,0 +1,44 @@
+".nlFokkezbToast_window": {
+  width: Ti.UI.SIZE,
+  height: 100,
+
+  bottom: 0,
+
+  backgroundColor: 'transparent',
+  backgroundImage: null
+}
+
+".nlFokkezbToast_view": {
+  width: 200,
+  height: '50dp',
+  bottom: '-50dp',
+
+  backgroundColor: '#c5c5c7',
+  borderRadius: '5dp'
+}
+
+".nlFokkezbToast_enterAnimation": {
+  bottom: '50dp'
+}
+
+".nlFokkezbToast_exitAnimation": {
+  bottom: '-50dp'
+}
+
+".nlFokkezbToast_label": {
+  width: 200,
+  textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+  color: '#fff',
+  font: {
+    fontSize: 17,
+    fontWeight: 'bold'
+  }
+}
+
+".nlFokkezbToast_view_error": {
+  backgroundColor: '#d9534f'
+}
+
+".nlFokkezbToast_view_warning": {
+  backgroundColor: '#f0ad4e'
+}

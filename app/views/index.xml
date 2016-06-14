@@ -1,71 +1,10 @@
 <Alloy>
-    <Window id="container" top="20" layout="absolute" onClose="cleanUp">
-        <View id="dataView" layout="vertical" >
-            <TabGroup src="mysrcrfile"></TabGroup>
-            <Label bottom="10" id="title">Visitors Book</Label>
-            <Label bottom="10" id="dateField"/>
-            <Widget src="BVSTextField" isFirst="true" id="nameField" hintText="Name"/>
-            <Widget src="BVSTextField" id="orgn" hintText="Organisation"/>
-            <Widget src="BVSTextField" id="car" hintText="Car Registration"/>
-            <Widget src="BVSTextField" id="visiting" hintText="Visiting"/>
-            <Label color="#c5c5c7" class="formField" id="arrivalTime" text="  Time In"></Label>
-            <Label color="#c5c5c7" class="formField" id="departureTime" text="  Time Out"></Label>
-            <View top="10" layout="absolute" width="200">
-                <ImageView left="0" top="0" width="90" height="0" id="photoImage" onClick="onAdd" image="/images/myimage.png" />
-                <ImageView right="0" top="0" width="90" height="0" id="signatureImage" onClick="addSignature" image="/images/myimage.png" />
+    <NavigationWindow id="win1" platform="ios">
+        <Window id="win2" title="Visitors Book" backgroundColor="white" layout="absolute">
+            <View height="200" layout="vertical">
+                <Button class="formField" id="newButton" onClick="newRegistration">Arrive</Button>
+                <Button class="formField" id="leaveButton" onClick="signOut">Depart</Button>
             </View>
-        </View>
-        <View visible="false" layout="vertical" id="pickerView" height="276" bottom="-276" width="320" zIndex="99" backgroundColor="white" class="pickerView">
-            <ButtonBar id="bb1" platform="ios" backgroundColor="#369" top="5" height="25" width="200">
-                <!-- The Labels tag sets the ButtonBar.labels property -->
-                <Labels>
-                    <!-- Specify text with node text or the title attribute. -->
-                    <!-- Can also specify the enabled, image and width attributes. -->
-                    <Label>Cancel</Label>
-                    <Label>Done</Label>
-                </Labels>
-                <!-- Place additional views for the ButtonBar here. -->
-            </ButtonBar>
-            <Picker id="picker"
-            onChange="report"
-            type="Ti.UI.PICKER_TYPE_TIME"></Picker>
-        </View>
-        <View visible="false" layout="vertical" id="signatureView" height="276" bottom="-276" width="320" zIndex="99" backgroundColor="white" class="signatureView">
-            <ButtonBar id="bb2" platform="ios" backgroundColor="#369" top="5" height="25" width="200">
-                <!-- The Labels tag sets the ButtonBar.labels property -->
-                <Labels>
-                    <!-- Specify text with node text or the title attribute. -->
-                    <!-- Can also specify the enabled, image and width attributes. -->
-                    <Label>Erase</Label>
-                    <Label>Cancel</Label>
-                    <Label>Done</Label>
-                </Labels>
-                <!-- Place additional views for the ButtonBar here. -->
-            </ButtonBar>
-            <View backgroundColor="white" height="251" layout="absolute">
-                <Module backgroundColor="#c5c5c7" width="200" id="paint" module="ti.paint" method="createPaintView"
-                eraseMode="false" strokeWidth="2.5" strokeColor="black" strokeAlpha="255" />
-                <Label bottom="40" width="200" text="X" textAlign="Titanium.UI.TEXT_ALIGNMENT_LEFT"/>
-                <View backgroundColor="black" height="1" width="200" zIndex="101" bottom="40"></View>
-                <Label bottom="10" width="200" text="Signature" textAlign="Titanium.UI.TEXT_ALIGNMENT_LEFT"/>
-            </View>
-        </View>
-        <Toolbar platform="ios" bottom="0" borderTop="true" borderBottom="false">
-
-            <!-- The Items tag sets the Toolbar.items property. -->
-            <Items>
-                <Button onClick="onAdd" title="Photo"/>
-                <FlexSpace/>
-                <Button onClick="addSignature" title="Signature" />
-                <FlexSpace/>
-                <Button onClick="shareData" title="Print" />
-                <FlexSpace/>
-                <Button onClick="saveData" title="Save" />
-            </Items>
-
-            <!-- Place additional views for the Toolbar here. -->
-
-        </Toolbar>
-        <AlertDialog id="permissionDeniedDialog" title="Oops..." message="Unable to access camera/gallery, please check your app's privacy settings and try again." cancel="1" />
-    </Window>
+        </Window>
+    </NavigationWindow>
 </Alloy>
