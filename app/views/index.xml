@@ -1,12 +1,13 @@
 <Alloy>
     <Window id="container" top="20" layout="absolute" onClose="cleanUp">
         <View id="dataView" layout="vertical" >
+            <TabGroup src="mysrcrfile"></TabGroup>
             <Label bottom="10" id="title">Visitors Book</Label>
             <Label bottom="10" id="dateField"/>
-            <TextField class="formField" id="nameField" hintText="Name"></TextField>
-            <TextField class="formField" id="orgn" hintText="Organisation"></TextField>
-            <TextField class="formField" id="car" hintText="Car Registration"></TextField>
-            <TextField class="formField" id="visiting" hintText="Visiting"></TextField>
+            <Widget src="BVSTextField" id="nameField" hintText="Name"/>
+            <Widget src="BVSTextField" id="orgn" hintText="Organisation"/>
+            <Widget src="BVSTextField" id="car" hintText="Car Registration"/>
+            <Widget src="BVSTextField" id="visiting" hintText="Visiting"/>
             <Label color="#c5c5c7" class="formField" id="arrivalTime" text="  Time In"></Label>
             <Label color="#c5c5c7" class="formField" id="departureTime" text="  Time Out"></Label>
             <View top="10" layout="absolute" width="200">

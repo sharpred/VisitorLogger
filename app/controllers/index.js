@@ -39,8 +39,8 @@ function saveData() {
         model;
     console.log("**** save data");
     [$.nameField, $.orgn, $.car, $.visiting].forEach(function(field, val) {
-        data[field.id] = field.value;
-        field.value = "";
+        data[field.id] = field.getValue();
+        field.setValue("");
     });
     [$.arrivalTime, $.departureTime].forEach(function(field, val) {
         field.color = "#c5c5c7";
@@ -59,7 +59,7 @@ function saveData() {
     model = Alloy.createModel("visitors", data);
     Alloy.Collections.visitors.add(model);
     model.save();
-    console.log(Alloy.Collections.visitors.length);
+    console.log(JSON.stringify(Alloy.Collections.visitors));
 }
 
 function savePhoto(e) {
@@ -101,7 +101,9 @@ function addPhoto() {
         error : accessDenied,
         cancel : userCancelled
     };
-    if (Ti.Media.hasCameraPermissions()) {
+    if (Ti.Platform.model === 'Simulator' || Ti.Platform.model.indexOf('sdk') !== -1) {
+        Ti.Media.openPhotoGallery(options);
+    } else if (Ti.Media.hasCameraPermissions()) {
         Ti.Media.showCamera(options);
     } else {
         accessDenied();
