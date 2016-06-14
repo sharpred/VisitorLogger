@@ -12,6 +12,10 @@ $.setNextAction = function(func){
     $.done.addEventListener("click", func);
 };
 
+$.setBackAction = function(func){
+    $.back.addEventListener("click", func);
+};
+
 $.focus = function(){
     $.txt.focus();
 };
