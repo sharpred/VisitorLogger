@@ -1,8 +1,10 @@
 <Alloy>
     <NavigationWindow id="win1" platform="ios">
-        <Window id="win2" title="Visitors Book" backgroundColor="white" layout="vertical">
-            <Button id="newButton" onClick="newRegistration">Arrive</Button>
-            <Button id="leaveButton" onClick="signOut">Depart</Button>
+        <Window id="win2" title="Visitors Book" backgroundColor="white" layout="absolute">
+            <View height="200" layout="vertical">
+                <Button class="formField" id="newButton" onClick="newRegistration">Arrive</Button>
+                <Button class="formField" id="leaveButton" onClick="signOut">Depart</Button>
+            </View>
         </Window>
     </NavigationWindow>
 </Alloy>

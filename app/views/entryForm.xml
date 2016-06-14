@@ -1,14 +1,13 @@
 <Alloy>
     <Window id="win3" backgroundColor="white">
-        <View id="dataView" layout="vertical" >
-            <TabGroup src="mysrcrfile"></TabGroup>
+        <View top="30" id="dataView" layout="vertical" height="Titanium.UI.SIZE">
             <Widget src="BVSTextField" isFirst="true" id="nameField" hintText="Name"/>
             <Widget src="BVSTextField" id="orgn" hintText="Organisation"/>
             <Widget src="BVSTextField" id="car" hintText="Car Registration"/>
             <Widget src="BVSTextField" id="visiting" hintText="Visiting"/>
             <Label color="#c5c5c7" class="formField" id="arrivalTime" text="  Time In"></Label>
             <Label color="#c5c5c7" class="formField" id="departureTime" text="  Time Out"></Label>
-            <View top="10" layout="absolute" width="200">
+            <View top="10" layout="absolute" width="200" height="120">
                 <ImageView left="0" top="0" width="90" height="0" id="photoImage" onClick="onAdd" image="/images/myimage.png" />
                 <ImageView right="0" top="0" width="90" height="0" id="signatureImage" onClick="addSignature" image="/images/myimage.png" />
             </View>

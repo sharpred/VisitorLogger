@@ -6,10 +6,16 @@ var uuid = Ti.Platform.createUUID(),
     moment = require("alloy/moment"),
     activeButton,
     slide_in,
-    slide_out;
+    slide_out,
+    toastWidget = Alloy.createWidget('nl.fokkezb.toast', 'global', {
+    // defaults
+}),
+    toast = toastWidget.show,
+    error = toastWidget.error;
+;
 Alloy.Collections.visitors.fetch();
 
-function closeWindow(){
+function closeWindow() {
     $.win3.close();
 }
 
@@ -71,6 +77,7 @@ function saveData() {
     Alloy.Collections.visitors.add(model);
     model.save();
     console.log(JSON.stringify(Alloy.Collections.visitors));
+    toast("saved");
 }
 
 function savePhoto(e) {
@@ -216,7 +223,6 @@ $.visiting.setNextAction(function() {
         showArrivalPicker();
     });
 });
-
 
 $.orgn.setBackAction(function() {
     $.nameField.focus();
