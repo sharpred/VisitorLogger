@@ -1,12 +1,15 @@
 
-".container" : {
-
-}
+".container": {}
 
 ".item[platform=ios]": {
-    "selectionStyle": Ti.UI.iPhone.ListViewCellSelectionStyle.NONE,
-    "editActions": [{"style":Titanium.UI.iOS.ROW_ACTION_STYLE_DESTRUCTIVE,"title":"DELETE"},{"color":"blue","style":Titanium.UI.iOS.ROW_ACTION_STYLE_NORMAL,"title":"DONE"}]
-},
-".item[platform=android]": {
-    "selectionStyle": "null"
-},
+    "editActions": [
+        {
+            "style":Titanium.UI.iOS.ROW_ACTION_STYLE_DESTRUCTIVE,
+            "title": "DELETE"
+        },{
+            "color": "blue",
+            "style":Titanium.UI.iOS.ROW_ACTION_STYLE_NORMAL,
+            "title": "DEPART"
+        }
+    ]
+}
