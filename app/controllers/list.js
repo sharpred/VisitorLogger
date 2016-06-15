@@ -8,9 +8,38 @@ function doTransform(model) {
     return transform;
 }
 
-function deleteItem(e){
-    console.log("**delete");
-    console.log(JSON.stringify(e));
+function updateUi() {
+    "use strict";
+    console.log("updateUi");
+    Alloy.Collections.visitors.fetch();
+    updateListViewUi();
+}
+
+function deleteItem(e) {
+    "use strict";
+    var section,
+        item,
+        model,
+        length;
+    e = e || {};
+    length = $.lv.sections[e.sectionIndex].items.length;
+    section = $.lv.sections[e.sectionIndex];
+    item = section.getItemAt(e.itemIndex);
+    console.log(item);
+    if (item && item.uuid && item.uuid.text) {
+        console.log(JSON.stringify(item.uuid.text));
+        model = Alloy.Collections.visitors.get(item.uuid.text);
+        if (model) {
+            console.log(JSON.stringify(model));
+            Alloy.Collections.visitors.remove(model);
+            model.destroy();
+            updateUi();
+        } else {
+            console.error("cannot delete model");
+        }
+    } else {
+        console.error("no item");
+    }
 }
 
 function updateItem(e){
