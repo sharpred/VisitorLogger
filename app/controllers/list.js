@@ -1,4 +1,5 @@
-var args = arguments[0] || {};
+var args = arguments[0] || {},
+    moment = require("alloy/moment");
 Alloy.Collections.visitors.fetch();
 function doTransform(model) {
     "use strict";
@@ -51,8 +52,29 @@ function filterFunction(collection) {
 }
 
 function updateItem(e) {
-    console.log("**update");
-    console.log(JSON.stringify(e));
+    "use strict";
+    var section,
+        item,
+        model,
+        length;
+    e = e || {};
+    length = $.lv.sections[e.sectionIndex].items.length;
+    section = $.lv.sections[e.sectionIndex];
+    item = section.getItemAt(e.itemIndex);
+    if (item && item.uuid && item.uuid.text) {
+        console.log(JSON.stringify(item.uuid.text));
+        model = Alloy.Collections.visitors.getByUuid(item.uuid.text);
+        if (model) {
+            console.log(JSON.stringify(model));
+            model.set({
+                departureTime : moment().format("HH:mm")
+            });
+            model.save();
+        } else {
+            console.error("cannot delete model");
+        }
+        updateUi();
+    }
 }
 
 $.lv.addEventListener("editaction", function(e) {
