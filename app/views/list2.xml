@@ -1,0 +1,12 @@
+<Alloy>
+    <Window id="list" backgroundColor="white">
+        <ListView defaultItemTemplate="departed" id="lv">
+             <Templates>
+                    <Require src="templates/departed"/>
+                </Templates>
+            <ListSection dataCollection="visitors" dataFunction="updateListViewUi" dataTransform="doTransform" id="section">
+                <ListItem accessoryType="{accessoryType}" canEdit="{canEdit}" class="item" template="departed" uuid:text="{uuid}" timeOut:text="{departureTime}" visiting:text="{visiting}" name:text="{nameField}"></ListItem>
+            </ListSection>
+        </ListView>
+    </Window>
+</Alloy>

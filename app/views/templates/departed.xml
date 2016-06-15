@@ -1,9 +1,9 @@
 <Alloy>
-    <ItemTemplate name="arrival">
+    <ItemTemplate name="departed">
         <View layout="horizontal">
             <Label left="10" width="100" bindId="name" id="name"/>
             <Label left="10" width="100" bindId="visiting" id="visiting"/>
-            <Label right="10" width="90" bindId="timeIn" id="timeIn"/>
+            <Label right="10" width="90" bindId="timeOut" id="timeOut"/>
             <Label visible="false" bindId="uuid" id="uuid"/>
         </View>
     </ItemTemplate>

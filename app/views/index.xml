@@ -2,8 +2,9 @@
     <NavigationWindow id="win1" platform="ios">
         <Window id="win2" title="Visitors Book" backgroundColor="white" layout="absolute">
             <View height="200" layout="vertical">
-                <Button class="formField" id="newButton" onClick="newRegistration">Arrive</Button>
-                <Button class="formField" id="leaveButton" onClick="signOut">Depart</Button>
+                <Button class="formField" id="newButton" onClick="newRegistration">Sign In</Button>
+                <Button class="formField" id="leaveButton" onClick="signOut">Sign Out</Button>
+                <Button class="formField" id="allItems" onClick="showAll">Gone</Button>
             </View>
         </Window>
     </NavigationWindow>
