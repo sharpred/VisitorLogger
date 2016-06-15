@@ -55,30 +55,30 @@ function saveData() {
     console.log("**** save data");
     [$.nameField, $.orgn, $.car, $.visiting].forEach(function(field, val) {
         var id = field.getID();
-        console.log(JSON.stringify(field));
         data[id] = field.getValue();
-        field.reset();
     });
     [$.arrivalTime, $.departureTime].forEach(function(field, val) {
         field.color = "#c5c5c7";
         data[field.id] = field.text;
     });
-    $.arrivalTime.text = "  Time In";
-    $.departureTime.text = "  Time Out";
-    $.photoImage.image = "/images/myimage.png";
-    $.photoImage.height = 0;
-    $.signatureImage.image = "/images/myimage.png";
-    $.signatureImage.height = 0;
     data.uuid = uuid;
-    //reset uuid
-    uuid = Ti.Platform.createUUID();
     data.creationDate = moment().format();
     model = Alloy.createModel("visitors", data);
-    Alloy.Collections.visitors.add(model);
     if (model.isValid()) {
         model.save();
+        Alloy.Collections.visitors.add(model);
         toast("saved");
-        console.log(JSON.stringify(Alloy.Collections.visitors));
+        $.arrivalTime.text = "  Time In";
+        $.departureTime.text = "  Time Out";
+        $.photoImage.image = "/images/myimage.png";
+        $.photoImage.height = 0;
+        $.signatureImage.image = "/images/myimage.png";
+        $.signatureImage.height = 0;
+        [$.nameField, $.orgn, $.car, $.visiting].forEach(function(field, val) {
+            field.reset();
+        });
+        //reset uuid
+        uuid = Ti.Platform.createUUID();
     } else {
         error("Doh!");
     }

@@ -12,11 +12,14 @@ exports.definition = {
             // extended functions and properties go here
             validate : function(args) {
                 var test,
-                    keys = ["nameField", "arrivalTime", "car", "creationDate", "departureTime", "orgn", "uuid", "visiting"];
+                    keys = ["id", "nameField", "arrivalTime", "car", "creationDate", "departureTime", "orgn", "uuid", "visiting"];
                 test = helpers.hasKeys(args, keys);
                 //console.log(args);
                 if (!test) {
                     return "doh!";
+                }
+                if(args.nameField !== "Paul") {
+                    return "NO";
                 }
             }
         });
