@@ -45,9 +45,15 @@ exports.definition = {
             },
             getByUuid : function(uuid) {
                 var data = this.where({
-                    uuid : uuid
+                uuid : uuid
                 })[0];
                 return data;
+            },
+            getCurrentItems : function() {
+                return this.filter(function(item) {
+                    var js = item.toJSON();
+                    return js.departureTime === "  Time Out";
+                });
             }
         });
 

@@ -4,7 +4,7 @@
              <Templates>
                     <Require src="templates/arrival"/>
                 </Templates>
-            <ListSection dataCollection="visitors" dataFunction="updateListViewUi" dataTransform="doTransform" id="section">
+            <ListSection dataCollection="visitors" dataFilter="filterFunction" dataFunction="updateListViewUi" dataTransform="doTransform" id="section">
                 <ListItem accessoryType="{accessoryType}" canEdit="{canEdit}" class="item" template="arrival" uuid:text="{uuid}" timeIn:text="{arrivalTime}" visiting:text="{visiting}" name:text="{nameField}"></ListItem>
             </ListSection>
         </ListView>

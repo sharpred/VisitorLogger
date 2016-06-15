@@ -2,7 +2,10 @@ var args = arguments[0] || {};
 Alloy.Collections.visitors.fetch();
 function doTransform(model) {
     "use strict";
-    var transform = model.toJSON();
+    var transform = {};
+    if (model) {
+        transform = model.toJSON();
+    }
     console.log(transform);
     transform.canEdit = true;
     transform.selectionStyle = OS_IOS ? Ti.UI.iPhone.ListViewCellSelectionStyle.NONE : null;
@@ -43,10 +46,15 @@ function deleteItem(e) {
     }
 }
 
-function updateItem(e){
+function filterFunction(collection) {
+    return collection.getCurrentItems();
+}
+
+function updateItem(e) {
     console.log("**update");
     console.log(JSON.stringify(e));
 }
+
 $.lv.addEventListener("editaction", function(e) {
     "use strict";
     switch(e.action) {
