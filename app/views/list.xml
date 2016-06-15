@@ -1,4 +1,12 @@
 <Alloy>
     <Window id="list" backgroundColor="white">
+        <ListView defaultItemTemplate="arrival" id="lv">
+             <Templates>
+                    <Require src="templates/arrival"/>
+                </Templates>
+            <ListSection dataCollection="visitors" dataFunction="updateListViewUi" dataTransform="doTransform" id="section">
+                <ListItem template="arrival" name:text="{nameField}"></ListItem>
+            </ListSection>
+        </ListView>
     </Window>
 </Alloy>

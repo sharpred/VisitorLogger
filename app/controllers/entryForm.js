@@ -13,7 +13,6 @@ var uuid = Ti.Platform.createUUID(),
     toast = toastWidget.show,
     error = toastWidget.error;
 ;
-Alloy.Collections.visitors.fetch();
 
 function closeWindow() {
     $.win3.close();
