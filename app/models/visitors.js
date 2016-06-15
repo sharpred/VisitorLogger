@@ -14,7 +14,7 @@ exports.definition = {
                 var test,
                     keys = ["nameField", "arrivalTime", "car", "creationDate", "departureTime", "orgn", "uuid", "visiting"];
                 test = helpers.hasKeys(args, keys);
-                console.log(args);
+                //console.log(args);
                 if (!test) {
                     return "doh!";
                 }
