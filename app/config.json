@@ -1,6 +1,6 @@
 {
     "global": {
-        "theme": "pjweb"
+        "theme": "wibble"
     },
     "env:development": {},
     "env:test": {},
