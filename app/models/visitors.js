@@ -42,6 +42,12 @@ exports.definition = {
                 var moment = require("alloy/moment");
                 var dt = moment(item.get("creationDate")).valueOf();
                 return -dt;
+            },
+            getByUuid : function(uuid) {
+                var data = this.where({
+                    uuid : uuid
+                })[0];
+                return data;
             }
         });
 

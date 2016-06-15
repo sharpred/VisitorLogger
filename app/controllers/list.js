@@ -3,6 +3,7 @@ Alloy.Collections.visitors.fetch();
 function doTransform(model) {
     "use strict";
     var transform = model.toJSON();
+    console.log(transform);
     transform.canEdit = true;
     transform.selectionStyle = OS_IOS ? Ti.UI.iPhone.ListViewCellSelectionStyle.NONE : null;
     return transform;
@@ -28,7 +29,7 @@ function deleteItem(e) {
     console.log(item);
     if (item && item.uuid && item.uuid.text) {
         console.log(JSON.stringify(item.uuid.text));
-        model = Alloy.Collections.visitors.get(item.uuid.text);
+        model = Alloy.Collections.visitors.getByUuid(item.uuid.text);
         if (model) {
             console.log(JSON.stringify(model));
             Alloy.Collections.visitors.remove(model);
