@@ -75,9 +75,13 @@ function saveData() {
     data.creationDate = moment().format();
     model = Alloy.createModel("visitors", data);
     Alloy.Collections.visitors.add(model);
-    model.save();
-    console.log(JSON.stringify(Alloy.Collections.visitors));
-    toast("saved");
+    if (model.isValid()) {
+        model.save();
+        toast("saved");
+        console.log(JSON.stringify(Alloy.Collections.visitors));
+    } else {
+        error("Doh!");
+    }
 }
 
 function savePhoto(e) {
@@ -251,4 +255,5 @@ function enableSaveButton() {
     }
     //console.log($.arrivalTime.text);
 }
+
 Alloy.Globals.Dispatcher.on("BVSTextField:update", enableSaveButton);

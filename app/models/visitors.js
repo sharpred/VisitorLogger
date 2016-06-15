@@ -1,33 +1,43 @@
+var helpers = require("helpers");
 exports.definition = {
-	config: {
+    config : {
 
-		adapter: {
-			type: "properties",
-			collection_name: "visitors"
-		}
-	},
-	extendModel: function(Model) {
-		_.extend(Model.prototype, {
-			// extended functions and properties go here
-		});
+        adapter : {
+            type : "properties",
+            collection_name : "visitors"
+        }
+    },
+    extendModel : function(Model) {
+        _.extend(Model.prototype, {
+            // extended functions and properties go here
+            validate : function(args) {
+                var test,
+                    keys = ["nameField", "arrivalTime", "car", "creationDate", "departureTime", "orgn", "uuid", "visiting"];
+                test = helpers.hasKeys(args, keys);
+                console.log(args);
+                if (!test) {
+                    return "doh!";
+                }
+            }
+        });
 
-		return Model;
-	},
-	extendCollection: function(Collection) {
-		_.extend(Collection.prototype, {
-			// extended functions and properties go here
+        return Model;
+    },
+    extendCollection : function(Collection) {
+        _.extend(Collection.prototype, {
+            // extended functions and properties go here
 
-			// For Backbone v1.1.2, uncomment the following to override the
-			// fetch method to account for a breaking change in Backbone.
-			/*
-			fetch: function(options) {
-				options = options ? _.clone(options) : {};
-				options.reset = true;
-				return Backbone.Collection.prototype.fetch.call(this, options);
-			}
-			*/
-		});
+            // For Backbone v1.1.2, uncomment the following to override the
+            // fetch method to account for a breaking change in Backbone.
+            /*
+             fetch: function(options) {
+             options = options ? _.clone(options) : {};
+             options.reset = true;
+             return Backbone.Collection.prototype.fetch.call(this, options);
+             }
+             */
+        });
 
-		return Collection;
-	}
+        return Collection;
+    }
 };

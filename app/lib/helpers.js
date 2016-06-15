@@ -25,4 +25,24 @@ function renameFile(path, newName) {
 
     return newName;
 }
+
 exports.renameFile = renameFile;
+
+function hasKeys(obj, keys) {
+    var objectKeys,
+        diff;
+
+    if (_.isObject(obj) && _.isArray(keys)) {
+        objectKeys = _.keys(obj);
+        diff = _.difference(objectKeys, keys);
+        if (_.isEmpty(diff)) {
+            return true;
+        }
+        console.error("diff");
+        console.error(diff);
+        return false;
+    }
+    return false;
+
+};
+exports.hasKeys = hasKeys;
