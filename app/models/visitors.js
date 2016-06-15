@@ -18,9 +18,7 @@ exports.definition = {
                 if (!test) {
                     return "doh!";
                 }
-                if(args.nameField !== "Paul") {
-                    return "NO";
-                }
+
             }
         });
 
@@ -33,12 +31,18 @@ exports.definition = {
             // For Backbone v1.1.2, uncomment the following to override the
             // fetch method to account for a breaking change in Backbone.
             /*
-             fetch: function(options) {
-             options = options ? _.clone(options) : {};
-             options.reset = true;
-             return Backbone.Collection.prototype.fetch.call(this, options);
-             }
-             */
+            fetch: function(options) {
+            options = options ? _.clone(options) : {};
+            options.reset = true;
+            return Backbone.Collection.prototype.fetch.call(this, options);
+            }
+            */
+            //note the negative to get reverse order - newest at top!
+            comparator : function(item) {
+                var moment = require("alloy/moment");
+                var dt = moment(item.get("creationDate")).valueOf();
+                return -dt;
+            }
         });
 
         return Collection;
