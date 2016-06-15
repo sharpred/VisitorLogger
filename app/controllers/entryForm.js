@@ -142,6 +142,7 @@ function addSignature() {
 }
 
 function cleanUp() {
+    Alloy.Globals.Dispatcher.off("BVSTextField:update", enableSaveButton);
     $.destroy();
 }
 
@@ -237,7 +238,7 @@ $.visiting.setBackAction(function() {
     $.car.focus();
 });
 
-Alloy.Globals.Dispatcher.on("BVSTextField:update", function() {
+function enableSaveButton() {
     var nameField = $.nameField.isNotEmpty(),
         carField = $.car.isNotEmpty(),
         orgField = $.orgn.isNotEmpty(),
@@ -248,5 +249,6 @@ Alloy.Globals.Dispatcher.on("BVSTextField:update", function() {
     } else {
         $.saveButton.enabled = false;
     }
-    console.log($.arrivalTime.text);
-});
+    //console.log($.arrivalTime.text);
+}
+Alloy.Globals.Dispatcher.on("BVSTextField:update", enableSaveButton);

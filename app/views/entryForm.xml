@@ -1,5 +1,5 @@
 <Alloy>
-    <Window id="win3" backgroundColor="white">
+    <Window id="win3" backgroundColor="white" onClose="cleanUp">
         <View top="30" id="dataView" layout="vertical" height="Titanium.UI.SIZE">
             <Widget src="BVSTextField" isFirst="true" id="nameField" hintText="Name"/>
             <Widget src="BVSTextField" id="orgn" hintText="Organisation"/>

@@ -7,4 +7,5 @@
             </View>
         </Window>
     </NavigationWindow>
+    <Window id="win1"platform="android"></Window>>
 </Alloy>
