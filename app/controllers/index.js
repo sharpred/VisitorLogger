@@ -6,7 +6,9 @@ function newRegistration() {
 }
 
 function signOut() {
-    var win = Alloy.createController('list').getView();
+    var win = Alloy.createController('list', {
+        "filter" : "in"
+    }).getView();
     $.win1.openWindow(win);
 }
 
